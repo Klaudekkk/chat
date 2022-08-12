@@ -8,6 +8,6 @@ import "./controllers"
 
 $(function() {     $('.ui.dropdown').dropdown(); });
  $(document).on('turbo:load', function(){
-     
+
      $('.ui.dropdown').dropdown();  })
 
