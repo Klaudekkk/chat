@@ -19,6 +19,11 @@
 @import 'semantic-ui';
 
 
-.notification{
+.notification {
   height: 450px;
+}
+
+.is-error{
+  background-color: #feecf0 !important;
+  color: #f14668 !important
 }

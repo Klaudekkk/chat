@@ -1,5 +1,5 @@
 <div class="section mt-2 has-text-centered">
-
+  <%= render 'layouts/messages' %>
   <span class="icon mb-6">
   <i class="fa-regular fa-message icon is-large has-text-info"></i>
   </span>
@@ -8,8 +8,21 @@
 </div>
 
 <div class="columns">
-  <div class="column">
-  <%= render @messages %>
+  <div class="column ">
+    <div class="box">
+      <%= render @messages %>
+      <%= form_for(@message, html: {class: "field mt-6 ", role: "form "} , url: message_path) do |f| %>
+        <div class="field has-addons">
+          <div class="control">
+            <%= f.text_field :body, class: "input" %>
+          </div>
+          <div class="control">
+            <%= f.button "Wyślij", class: "button is-info" %>
+          </div>
+        </div>
+        <% end %>
+    </div>
+
 
   </div>
 

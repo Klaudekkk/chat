@@ -1,0 +1,8 @@
+<% flash.each do |message_type, message_content| %>
+  <div class="message is-<%= message_type %>  ">
+    <button class="delete">x</button>
+    <div class="message-body">
+      <%= message_content %>
+    </div>
+  </div>
+<% end %>
