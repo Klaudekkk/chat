@@ -2,38 +2,19 @@
 <html>
 <head>
   <title>Chat</title>
+  <%= favicon_link_tag %>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
 </head>
 <body>
-<div class="ui small inverted menu">
-  <div class="ui container">
-    <a class="item">
-      Home
-    </a>
-    <a class="item">
-      Messages
-    </a>
-    <div class="right menu">
-      <div class="ui dropdown item">
-        Language <i class="dropdown icon"></i>
-        <div class="menu">
-          <a class="item">English</a>
-          <a class="item">Russian</a>
-          <a class="item">Spanish</a>
-        </div>
-      </div>
-      <div class="item">
-        <div class="ui primary button">Sign Up</div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="ui container">
+
+<%= render 'layouts/navigation' %>
+<div class="container">
   <%= yield %>
 </div>
 </body>

@@ -1,0 +1,33 @@
+<div class="section mt-2 has-text-centered">
+
+  <span class="icon mb-6">
+  <i class="fa-regular fa-message icon is-large has-text-info"></i>
+  </span>
+  <p class="title is-1">Title 1</p>
+  <p class="subtitle is-3">Subtitle 3</p>
+</div>
+
+<div class="columns">
+  <div class="column">
+  <%= render @messages %>
+
+  </div>
+
+  <div class="column is-one-quarter ">
+    <div class="container is-fluid">
+      <div class="notification ">
+        <aside class="menu ">
+          <p class="menu-label">
+            Menu
+          </p>
+          <ul class="menu-list">
+            <li><a>Payments</a></li>
+            <li><a>Transfers</a></li>
+            <li><a>Balance</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
+
