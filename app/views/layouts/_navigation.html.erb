@@ -24,31 +24,26 @@
           </a>
 
           <div class="navbar-dropdown">
-            <a class="navbar-item">
-              Log out
-            </a>
-            <a class="navbar-item">
-              Log in
-            </a>
-            <a class="navbar-item">
-              Sign up
-            </a>
-            <hr class="navbar-divider">
-            <a class="navbar-item">
-              Report an issue
-            </a>
+            <% if logged_in? %>
+              <%= button_to "Wyloguj się", logout_path, method: :delete,class: "navbar-item" %>
+            <% else %>
+              <%= link_to "Zaloguj się", login_path, class: "navbar-item" %>
+              <a class="navbar-item">
+                Zarejestruj się
+              </a>
+            <% end %>
           </div>
         </div>
       </div>
 
       <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-primary">
-              <strong>Sign up</strong>
-            </a>
+        <% if !logged_in? %>
+          <div class="navbar-item">
+            <div class="buttons">
+              <%= link_to "Zaloguj się", login_path, class: "button is-primary" %>
+            </div>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </nav>

@@ -10,41 +10,32 @@
 
 <div class="columns is-vcentered">
   <div class="column has-text-centered">
-
-    <div class="field">
-      <p class="control has-icons-left has-icons-right">
-        <input class="input" type="email" placeholder="Email">
-        <span class="icon is-small is-left">
-      <i class="fas fa-envelope"></i>
-    </span>
-        <span class="icon is-small is-right">
-      <i class="fas fa-check"></i>
-    </span>
-      </p>
-    </div>
-    <div class="field">
-      <p class="control has-icons-left">
-        <input class="input" type="password" placeholder="Password">
-        <span class="icon is-small is-left">
-      <i class="fas fa-lock"></i>
-    </span>
-      </p>
-    </div>
-    <div class="field">
-      <p class="control">
-        <button class="button is-success">
-          Login
-        </button>
-      </p>
-    </div>
-
+    <%= form_for(:session, html: { class: "ui form", role: "form" }, url: login_path) do |f| %>
+      <div class="field">
+        <%= f.label :username, "Username", class: "label" %>
+        <div class="control">
+          <%= f.text_field :username, placeholder: "Username" %>
+        </div>
+      </div>
+      <div class="field">
+        <%= f.label :password, "Password", class: "label" %>
+        <div class="control">
+          <%= f.password_field :password, placeholder: "Password" %>
+        </div>
+      </div>
+      <div class="field">
+        <p class="control">
+          <%= f.button "Login", class: "button is-info" %>
+        </p>
+      </div>
+    <% end %>
   </div>
-  <div class="column has-text-centered">
-    <p class="subtitle is-3">Albo zarejestruj się</p>
-    <button class="button is-large is-responsive">
-      Zarejestruj się
-    </button>
-  </div>
+<div class="column has-text-centered">
+  <p class="subtitle is-3">Nie posiadasz konta? </p>
+  <button class="button is-info is-light is-responsive is-large">
+    Zarejestruj się
+  </button>
+</div>
 
 </div>
 
